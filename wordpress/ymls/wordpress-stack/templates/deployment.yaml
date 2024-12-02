@@ -1,0 +1,37 @@
+---
+# Source: wordpress-stack/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wpapp
+  labels:
+    app: wordpress
+    env: dev
+    stack: wordpress-stack
+spec:
+  selector:
+    matchLabels:
+      app: wordpress
+      env: dev
+      stack: wordpress-stack
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: wordpress
+        env: dev
+        stack: wordpress-stack
+    spec:
+      containers:
+      - name: wpapp
+        image: wordpress:latest
+        imagePullPolicy: Always
+        envFrom:
+          - configMapRef:
+              name: wpapp-configmap
+              optional: false
+          - secretRef:
+              name: wpapp-secret
+              optional: false
+        ports:
+        - containerPort: 80
