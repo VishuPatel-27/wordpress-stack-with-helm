@@ -17,7 +17,5 @@ wp:
     WORDPRESS_DB_HOST: "wp-database.wpdb.svc.cluster.local"
     WORDPRESS_DB_NAME: "wordpress"
     WORDPRESS_DB_USER: "wordpress"
-  secrets:
-    WORDPRESS_DB_PASSWORD: d29yZHByZXNz  # Base64 encoded 'wordpress'
   containerPorts:
       http: 80

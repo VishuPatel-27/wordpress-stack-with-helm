@@ -14,8 +14,5 @@ db:
     APP_ENV: dev
     MYSQL_DATABASE: wordpress
     MYSQL_USER: wordpress
-  secrets:
-    MYSQL_ROOT_PASSWORD: c29tZXdvcmRwcmVzcw== # base64 encode value of "somewordpress"
-    MYSQL_PASSWORD: d29yZHByZXNz # base64 encode value of "wordpress"
   containerPorts:
     mysql: 3306
