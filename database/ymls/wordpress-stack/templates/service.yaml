@@ -13,6 +13,7 @@ spec:
   - port: 3306            # the port on which the service is listening
     protocol: TCP
     targetPort: 3306      # the port exposed by Pod (we defined in the deployment as part of `containerPort)
+  type: NodePort
   selector:
     app: database
     env: dev

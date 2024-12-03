@@ -35,10 +35,10 @@ spec:
               optional: false
         ports:
         - containerPort: 3306
-        volumeMounts:
-        - name: wp-database-volume
-          mountPath: /var/lib/mysql       # Path inside container
-      volumes:
-      - name: wp-database-volume
-        hostPath:
-          path: /var/lib/wp-data   # Path in host machine
+      #   volumeMounts:
+      #   - name: wp-database-volume
+      #     mountPath: /var/lib/mysql       # Path inside container
+      # volumes:
+      # - name: wp-database-volume
+      #   hostPath:
+      #     path: /var/lib/wp-data   # Path in host machine
